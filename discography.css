@@ -1,31 +1,5 @@
- /*
-* Skeleton V1.2
-* Copyright 2011, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 6/20/2012
-*/
-
-/* Table of Content
-==================================================
-	#Site Styles
-	#Page Styleshttps://cfl.dropboxstatic.com/static/images/icons/icon_spacer-vflN3BYt2.gif
-	#Media Queries
-	#Font-Face */
-
-/* #Site Styles
-================================================== */
-	
-<!-- Mobile Specific Metas
-================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
--------------------------------------------------
-<--- Site Navigation Site ---->
 /*
 Tabele of Contents
-
 Color Palette
 #FF8A7C - LightCoral
 #FFF - White
@@ -34,15 +8,29 @@ Color Palette
 #FFA152 - Orange
 #68E8DB - Aqua
 */
-html{
-    background: #000;
+html {
+	width: 100%;
+	background-color: #8AE5D8;
 }
+
+@media screen and (max-width: 453px) {
+	.background {
+		display: none;
+	}
+}
+
+body { 
+  background-image: url(../img/paper.png);
+  color: #000;
+  font-family: Ubuntu, Arial, sans-serif;
+ }
 ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #68E8DB;
+    display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-end;
+    background-color: #8AE5D8;
+    text-shadow: 2px 2px #000;
 }
 li a {
     display: block;
@@ -50,25 +38,33 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    flex-direction: row;
+}
+br {
+  display: none;
+}
+ol li{
+	text-shadow: 2px 2px #000;
+	padding-top: 5px;
 }
 .journey{
     margin: 390px 690px;
     font-family: cursive;
     }
 .background{
-    margin: -50px 230px 450px;
+    margin: -50px 0 50px 0;
     height: 215px; 
     width: 215px;
     border-radius: 15px;
     }
-.albums {
+.albums, .albums1 { 
   position: relative;
   width: 20px;
-    margin-left: 780px;
+  margin-left: 480px;
 }
-.albums1{
-    margin-left: 720px; 
-    color: #fff;
+.albums1 {
+ 	width: 25%;
+    color: #000;
 }
 .image {
   display: block;
@@ -76,17 +72,11 @@ li a {
   height: 285px;
 }
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
+  color: #FFF;
   height: 285px;
   width: 285px;
-  opacity:.3;
-  transition: .5s ease;
-  background-color: #FF8A7C;
+  background-color: #80C0FA;
+  text-shadow: 2px 2px #000;
 }
 .albums:hover .overlay {
   opacity: 1;
@@ -94,25 +84,15 @@ li a {
 .text {
   color: #fff;
   font-size: 12px;
-  position: absolute;
   width: 150%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
-* {
-  box-sizing: border-box; 
-}
-/* Set a background color */
-body {
-  background-color: #6CC1FF;
-  font-family: Helvetica, sans-serif;
-}
 
 /* The actual timeline (the vertical ruler) */
 .timeline {
-  position: relative;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -120,7 +100,6 @@ body {
 /* The actual timeline (the vertical ruler) */
 .timeline::after {
   content: '';
-  position: absolute;
   width: 6px;
   background-color: white;
   top: 0;
@@ -131,11 +110,13 @@ body {
 
 /* Container around content */
 .container {
-  padding: 10px 30px;
   position: relative;
   background-color: inherit;
   width: 50%; 
-    margin-left: 550px;
+margin-left: 475px;
+}
+.content {
+	color: #000;
 }
 
 /* The circles on the timeline */
@@ -154,12 +135,14 @@ body {
 
 /* Place the container to the left */
 .left {
-  left: 0;
+  width: 50%;
+  right: 50%;
 }
 
 /* Place the container to the right */
 .right {
-  left: 50%;
+  width: 50%;
+  left: -50%;
 }
 
 /* Add arrows to the left container (pointing right) */
@@ -204,7 +187,7 @@ body {
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
-@media all and (max-width: 600px) {
+@media screen and (max-width: 600px) {
 /* Place the timelime to the left */
   .timeline::after {
     left: 31px;
@@ -242,7 +225,7 @@ body {
     border-radius: 100%;
     width: 130px;
     height: 130px;
-    margin-left: 175px;
+    margin-left: 485px;
     margin-top: -45px;
     z-index: 1;
    }
@@ -250,38 +233,35 @@ body {
     border-radius: 100%;
     width: 130px;
     height: 130px;
-    margin-left: 455px;
+    margin-left: 355px;
     margin-top: -855px;
 }
 .members1 {
     border-radius: 100%;
     width: 130px;
     height: 130px;
-    margin-left: 210px;
+    margin-left: 410px;
     margin-top: -45px;
     z-index: 2;
 }
 .names {
-    margin-left: 320px;
+    margin-left: 430px;
     margin-top: 12px;
 }
 .positions {
-    margin-left: 345px;
-    margin-top: 12px;
+    margin-left: 625px;
+    margin-top: 1px;
 }
 .band {
   color: #E87260;
   background-color: #68E8DB;
   padding: 15px;
-  margin-left: 95px;
-  margin-right: 450px;
+  margin-right: 15px; 
+  text-shadow: 1px 1px #000;
+  font-size: 25px;
   }
 .logo {
-    margin-left: 765px;
-    margin-top: -45px;
-    height: 160px;
-    width: 195px;
-    border-radius: 20px;
+    display: none;
     }
 h4{
     margin-left: 15px;
@@ -308,7 +288,7 @@ input{
     box-sizing: border-box; 
     margin-top: 6px; 
     margin-bottom: 16px; 
-      margin-left: 410px;
+    margin-left:250px;
    }
 input[type=submit] {
     background-color: #68E8DB;
@@ -316,14 +296,14 @@ input[type=submit] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 815px;
+    margin-left: 250px;
 }
 input[type=checkbox]{
-    margin-left: 775px;
+    margin-left: 250px;
     padding: 10px;
 }
 .preference{
-   margin-left: 777px;
+   margin-left: 625px;
   
 }
 #comment{
@@ -331,23 +311,27 @@ input[type=checkbox]{
     height: 100px;
 }
 #backtotop {
-    margin-left: 810px;
+    margin-left: 655px;
+}
+.text {
+  color: #fff;
+  font-size: 12px;
 }
 a:link{    
-    color: #fff; 
+    color: #E0E0E2; 
 }
 a:visited{ 
-    color: #F00;
+    color: #80C0FA;
 }
 a:hover{ 
-    color: #FFA152; 
+    color: #DADDD8; 
 }
-a:active{ 
-    color: #FF0; 
+#backtotop {
+	padding-bottom: 25px;
+	color: #000;
 }
-@media only screen and (max-device-width: 400px){
+@media only screen and (max-device-width: 600px){
     		div#wrapper {
-			width: 400px;
 		}
 
 		div#header {
